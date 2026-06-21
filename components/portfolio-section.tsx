@@ -8,26 +8,17 @@ export function PortfolioSection() {
       description:
         "Community-powered water mapping and crowdfunding platform. Built with modern web technologies to enable users to map water resources and fund water-related projects. The platform combines mapping visualization, user authentication, and payment processing.",
       tag: "Full-Stack",
-      logo: "/logos/startup.svg",
+      logo: "/images/omichain-logo.png",
       bgColor: "bg-[#6366F1]",
       illustration: "/images/studio-workspace.svg",
       link: "http://omichain.org/",
-    },
-    {
-      title: "Abikeadecourt Hostel Platform",
-      description:
-        "Student hostel discovery and booking platform with integrated payment processing using Paystack. Features include hostel listings, user profiles, booking management, and secure payment integration.",
-      tag: "Full-Stack",
-      logo: "/logos/company.svg",
-      bgColor: "bg-[#2F81F7]",
-      illustration: "/images/venture-workspace.svg",
     },
     {
       title: "TracheidsHLX",
       description:
         "Scalable web application built with modern full-stack architecture. Implements complex features including real-time data processing, user management, and optimized database queries for high-performance operations.",
       tag: "Full-Stack",
-      logo: "/logos/agency.svg",
+      logo: "/images/tracheids-logo.png",
       bgColor: "bg-[#FF6B7A]",
       illustration: "/images/studio-workspace.svg",
     },
@@ -36,7 +27,7 @@ export function PortfolioSection() {
       description:
         "Educational platform built with Next.js and Tailwind CSS. Features course management, student enrollment, progress tracking, and secure authentication. Integrates payment processing for course access.",
       tag: "Full-Stack",
-      logo: "/logos/business.svg",
+      logo: "/images/durar-logo.png",
       bgColor: "bg-[#FFC224]",
       illustration: "/images/venture-workspace.svg",
     },
@@ -45,7 +36,7 @@ export function PortfolioSection() {
       description:
         "Premium aluminium and roofing solutions platform. B2B/B2C application for product catalog, quotation management, and customer relationship handling. Serves residential, commercial, and industrial sectors.",
       tag: "Full-Stack",
-      logo: "/logos/startup.svg",
+      logo: "/images/shelter-logo.png",
       bgColor: "bg-[#FF9500]",
       illustration: "/images/studio-workspace.svg",
       link: "http://sheltersetters.com/",
@@ -55,8 +46,17 @@ export function PortfolioSection() {
       description:
         "Blockchain-based solutions and Web3 platform. Developed smart contracts and decentralized applications, integrating blockchain technology with traditional web applications for transparency and security.",
       tag: "Blockchain",
-      logo: "/logos/company.svg",
+      logo: "/images/dlt-logo.png",
       bgColor: "bg-[#4F46E5]",
+      illustration: "/images/venture-workspace.svg",
+    },
+    {
+      title: "Abikeadecourt Hostel Platform",
+      description:
+        "Student hostel discovery and booking platform with integrated payment processing using Paystack. Features include hostel listings, user profiles, booking management, and secure payment integration.",
+      tag: "Full-Stack",
+      logo: "/images/abikeade-logo.png",
+      bgColor: "bg-[#2F81F7]",
       illustration: "/images/venture-workspace.svg",
     },
   ]

@@ -10,7 +10,7 @@ export function ExperienceSection() {
       company: "OmiChain",
       description:
         "Leading OmiChain, a community-powered water mapping and crowdfunding platform. Overseeing product development, technical architecture, and strategic direction of the platform.",
-      icon: "/logos/startup.svg",
+      icon: "/images/omichain-logo.png",
     },
     {
       period: "2023 - Present",
@@ -18,7 +18,7 @@ export function ExperienceSection() {
       company: "TracheidsHLX",
       description:
         "Building and maintaining scalable web applications using MERN stack. Developing APIs, optimizing database queries, and implementing modern frontend solutions with React.",
-      icon: "/logos/company.svg",
+      icon: "/images/tracheids-logo.png",
     },
     {
       period: "2022 - 2023",
@@ -26,7 +26,7 @@ export function ExperienceSection() {
       company: "DLT Africa",
       description:
         "Developed blockchain-based solutions and web applications. Worked with smart contracts, decentralized systems, and Web3 technologies to build innovative products.",
-      icon: "/logos/agency.svg",
+      icon: "/images/dlt-logo.png",
     },
     {
       period: "2021 - 2022",
@@ -34,7 +34,7 @@ export function ExperienceSection() {
       company: "Durar-Academy",
       description:
         "Built educational platform using Next.js, Tailwind CSS, and Node.js backend. Implemented course management, user authentication, and payment integration features.",
-      icon: "/logos/business.svg",
+      icon: "/images/durar-logo.png",
     },
   ]
 
@@ -77,7 +77,7 @@ export function ExperienceSection() {
                       alt={exp.title}
                       width={40}
                       height={40}
-                      className="w-8 h-8 md:w-10 md:h-10"
+                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
                     />
                   </div>
                 </div>

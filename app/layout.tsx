@@ -18,10 +18,29 @@ const onest = Onest({
   variable: "--font-onest",
 })
 
+const SITE_URL = "https://usmanabdullahi.xyz"
+const SITE_TITLE = "Usman Abdullahi - Full-Stack Developer & Founder of OmiChain"
+const SITE_DESCRIPTION =
+  "Portfolio of Usman Abdullahi, a full-stack developer building scalable web applications and leading OmiChain, a community-powered water mapping & funding platform."
+
 export const metadata: Metadata = {
-  title: "Paperfolio - Portfolio Landing Page",
-  description: "A playful portfolio landing page",
-  generator: "v0.app",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Usman Abdullahi",
+    images: [{ url: "/images/profile.png", width: 1200, height: 1200, alt: "Usman Abdullahi" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/images/profile3.webp"],
+  },
 }
 
 export default function RootLayout({

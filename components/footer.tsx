@@ -60,7 +60,14 @@ export function Footer() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
-                  <span className="text-black font-bold text-sm">UA</span>
+                  {/* <span className="text-black font-bold text-sm">UA</span> */}
+                  <Image
+                    src="/images/profile3.webp"
+                    alt="Usman Abdullahi"
+                    width={32}
+                    height={32}
+                    className="object-cover"
+                  />
                 </div>
                 <span className="text-lg md:text-xl font-bold">Usman Abdullahi</span>
               </div>
