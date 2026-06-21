@@ -1,6 +1,7 @@
 import { FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 export function ExperienceSection() {
   const experiences = [
@@ -42,7 +43,7 @@ export function ExperienceSection() {
     <section className="bg-black py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          <div className="text-white pt-0 md:pt-12 md:sticky md:top-12 self-start">
+          <Reveal className="text-white pt-0 md:pt-12 md:sticky md:top-12 self-start">
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 md:mb-8 leading-[1.3]">
               Take a look at my <span className="bg-[#6366F1] text-white px-3 py-1 inline-block">past experience</span>
             </h2>
@@ -55,44 +56,46 @@ export function ExperienceSection() {
                 See full resume
               </a>
             </Button>
-          </div>
+          </Reveal>
 
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <div key={index} className="bg-white border-4 border-black rounded-3xl min-h-[220px] md:min-h-[240px]">
-                <div className="flex items-center justify-between mb-4 md:mb-6 pt-6 md:pt-8 px-6 md:px-8">
-                  <div>
-                    <div className="text-base md:text-[22px] leading-tight md:leading-[34px] font-bold text-[#0B0B0B]">
-                      {exp.period}
-                    </div>
-                    {exp.company && (
-                      <div className="text-sm md:text-[16px] text-gray-600 mt-1">
-                        {exp.company}
+              <Reveal key={index} delay={index * 80}>
+                <div className="bg-white border-4 border-black rounded-3xl min-h-[220px] md:min-h-[240px]">
+                  <div className="flex items-center justify-between mb-4 md:mb-6 pt-6 md:pt-8 px-6 md:px-8">
+                    <div>
+                      <div className="text-base md:text-[22px] leading-tight md:leading-[34px] font-bold text-[#0B0B0B]">
+                        {exp.period}
                       </div>
-                    )}
+                      {exp.company && (
+                        <div className="text-sm md:text-[16px] text-gray-600 mt-1">
+                          {exp.company}
+                        </div>
+                      )}
+                    </div>
+                    <div className="rounded-full border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                      <Image
+                        src={exp.icon || "/placeholder.svg"}
+                        alt={exp.title}
+                        width={40}
+                        height={40}
+                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      />
+                    </div>
                   </div>
-                  <div className="rounded-full border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white flex items-center justify-center w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
-                    <Image
-                      src={exp.icon || "/placeholder.svg"}
-                      alt={exp.title}
-                      width={40}
-                      height={40}
-                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
-                    />
+
+                  <div className="border-t-[3px] border-black mb-4 md:mb-6"></div>
+
+                  <div className="px-6 md:px-8 pb-6 md:pb-8">
+                    <h3 className="text-xl md:text-[28px] leading-tight md:leading-[40px] font-bold text-[#0B0B0B] mb-2 md:mb-3">
+                      {exp.title}
+                    </h3>
+                    <p className="text-[#393939] text-base md:text-[20px] leading-relaxed md:leading-[32px]">
+                      {exp.description}
+                    </p>
                   </div>
                 </div>
-
-                <div className="border-t-[3px] border-black mb-4 md:mb-6"></div>
-
-                <div className="px-6 md:px-8 pb-6 md:pb-8">
-                  <h3 className="text-xl md:text-[28px] leading-tight md:leading-[40px] font-bold text-[#0B0B0B] mb-2 md:mb-3">
-                    {exp.title}
-                  </h3>
-                  <p className="text-[#393939] text-base md:text-[20px] leading-relaxed md:leading-[32px]">
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

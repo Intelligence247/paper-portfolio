@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 export function PortfolioSection() {
   const projects = [
@@ -64,70 +65,69 @@ export function PortfolioSection() {
   return (
     <section className="container mx-auto px-4 py-16 md:py-24">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <Reveal className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Take a look at my <br />
             <span className="bg-[#FFC224] text-black px-3 py-1 inline-block">design portfolio</span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white border-[3px] border-black rounded-[32px] overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col h-full"
-            >
-              <div className={`${project.bgColor} relative overflow-hidden h-[250px] md:h-[280px]`}>
-                <Image
-                  src={project.illustration || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                />
-              </div>
-
-              <div className="p-6 md:p-8 flex flex-col justify-between flex-1">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <Image
-                      src={project.logo || "/placeholder.svg"}
-                      alt={`${project.title} logo`}
-                      width={120}
-                      height={32}
-                      className="h-5 md:h-6 w-auto"
-                    />
-                  </div>
-
-                  <span className="inline-block bg-black text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4 w-fit">
-                    {project.tag}
-                  </span>
-
-                  <h3 className="text-lg md:text-[24px] font-bold mb-3 leading-tight md:leading-[32px] text-[#0B0B0B]">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-sm md:text-[16px] text-[#393939] leading-relaxed md:leading-[26px] font-medium">
-                    {project.description}
-                  </p>
+            <Reveal key={index} delay={index * 80} className="h-full">
+              <div className="group bg-white border-[3px] border-black rounded-[32px] overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col h-full">
+                <div className={`${project.bgColor} relative overflow-hidden h-[250px] md:h-[280px]`}>
+                  <Image
+                    src={project.illustration || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  />
                 </div>
 
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-semibold text-[#0B0B0B] hover:gap-3 transition-all text-sm md:text-base mt-6"
-                  >
-                    View project
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                ) : (
-                  <div className="flex items-center gap-2 font-semibold text-gray-400 text-sm md:text-base mt-6">
-                    <span>Coming soon</span>
+                <div className="p-6 md:p-8 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Image
+                        src={project.logo || "/placeholder.svg"}
+                        alt={`${project.title} logo`}
+                        width={120}
+                        height={32}
+                        className="h-5 md:h-6 w-auto"
+                      />
+                    </div>
+
+                    <span className="inline-block bg-black text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4 w-fit">
+                      {project.tag}
+                    </span>
+
+                    <h3 className="text-lg md:text-[24px] font-bold mb-3 leading-tight md:leading-[32px] text-[#0B0B0B]">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-sm md:text-[16px] text-[#393939] leading-relaxed md:leading-[26px] font-medium">
+                      {project.description}
+                    </p>
                   </div>
-                )}
+
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 font-semibold text-[#0B0B0B] hover:gap-3 transition-all text-sm md:text-base mt-6"
+                    >
+                      View project
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-2 font-semibold text-gray-400 text-sm md:text-base mt-6">
+                      <span>Coming soon</span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

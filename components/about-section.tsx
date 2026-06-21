@@ -1,18 +1,19 @@
 import { User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 export function AboutSection() {
   return (
     <section className="container mx-auto px-4 py-16 md:py-32">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div className="flex justify-center">
+        <Reveal className="flex justify-center">
           <div className="relative w-full max-w-lg aspect-square border-[4px] border-black rounded-full overflow-hidden bg-[#FF6B6B] shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)]">
             <Image src="/images/profile3.webp" alt="Usman Abdullahi" fill className="object-cover" />
           </div>
-        </div>
+        </Reveal>
 
-        <div className="space-y-6 md:space-y-8">
+        <Reveal className="space-y-6 md:space-y-8" delay={150}>
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Who's behind all this <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block">great work?</span>
@@ -48,7 +49,7 @@ export function AboutSection() {
             <User className="w-5 h-5" />
             More about me
           </Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

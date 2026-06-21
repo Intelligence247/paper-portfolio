@@ -51,20 +51,22 @@ export function Navigation() {
         </div>
       </nav>
 
-      {open && (
-        <div className="md:hidden absolute left-4 right-4 top-full mt-2 z-50 bg-white border-4 border-black rounded-xl px-5 py-4 max-w-2xl mx-auto shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-4">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="text-[18px] font-bold leading-[20px]"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      )}
+      <div
+        className={`md:hidden absolute left-4 right-4 top-full mt-2 z-50 bg-white border-4 border-black rounded-xl px-5 py-4 max-w-2xl mx-auto shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col gap-4 origin-top transition-all duration-200 ease-out ${
+          open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+        }`}
+      >
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={() => setOpen(false)}
+            className="text-[18px] font-bold leading-[20px]"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
