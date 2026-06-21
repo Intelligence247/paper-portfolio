@@ -1,9 +1,21 @@
-import { Facebook, Twitter, Instagram, Youtube, Linkedin, Mail, Phone } from "lucide-react"
+"use client"
+
+import { useState, type FormEvent } from "react"
+import { Github, Instagram, Linkedin, Mail, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
 
+const CONTACT_EMAIL = "uthmanabdullahi2020@gmail.com"
+
 export function Footer() {
+  const [subscribed, setSubscribed] = useState(false)
+
+  function handleSubscribe(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setSubscribed(true)
+  }
+
   return (
     <footer className="bg-black text-white py-12 md:py-16">
       <div className="container mx-auto px-4">
@@ -25,21 +37,26 @@ export function Footer() {
                   <h3 className="text-xl md:text-2xl font-bold text-black">Stay updated</h3>
                 </div>
 
-                <div className="relative w-full md:w-auto md:min-w-[400px] lg:min-w-[480px]">
-                  <Input
-                    type="email"
-                    placeholder="your@email.com"
-                    className="border-4 border-black rounded-xl px-4 md:px-6 h-14 md:h-16 pr-32 md:pr-44 text-base md:text-lg placeholder:text-gray-500"
-                  />
-                  <Button className="absolute right-2 top-2 bottom-2 bg-black text-white hover:bg-black/90 rounded-[10px] px-6 md:px-10 text-sm md:text-base font-semibold whitespace-nowrap h-auto">
-                    Subscribe
-                  </Button>
-                </div>
+                {subscribed ? (
+                  <p className="text-black font-semibold text-base md:text-lg">Thanks! You're on the list.</p>
+                ) : (
+                  <form onSubmit={handleSubscribe} className="relative w-full md:w-auto md:min-w-[400px] lg:min-w-[480px]">
+                    <Input
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                      className="border-4 border-black rounded-xl px-4 md:px-6 h-14 md:h-16 pr-32 md:pr-44 text-base md:text-lg placeholder:text-gray-500"
+                    />
+                    <Button type="submit" className="absolute right-2 top-2 bottom-2 bg-black text-white hover:bg-black/90 rounded-[10px] px-6 md:px-10 text-sm md:text-base font-semibold whitespace-nowrap h-auto">
+                      Subscribe
+                    </Button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
@@ -52,34 +69,40 @@ export function Footer() {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/usman-abdullahi-125a3a23b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="w-10 h-10 bg-[#2F81F7] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/intelligence247"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="w-10 h-10 bg-[#2F81F7] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/i_n_telligence"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
+                  className="w-10 h-10 bg-[#FF6B7A] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+                >
+                  <X className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/intel__tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
                   className="w-10 h-10 bg-[#FF6B7A] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
                 >
                   <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-[#FF6B7A] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-                >
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 bg-[#FF6B7A] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-                >
-                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -88,64 +111,23 @@ export function Footer() {
               <h3 className="font-bold mb-4">Pages</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#home" className="hover:text-white transition-colors">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#about" className="hover:text-white transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="#portfolio" className="hover:text-white transition-colors">
                     Portfolio
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Single Project
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold mb-4">Utility Pages</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Style Guide
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Start Here
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    404 Not Found
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Password protected
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Licenses
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Changelog
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition-colors">
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -156,8 +138,8 @@ export function Footer() {
               <ul className="space-y-3 text-gray-400 text-sm">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:hello@omichain.org" className="hover:text-white transition-colors">
-                    hello@omichain.org
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition-colors">
+                    {CONTACT_EMAIL}
                   </a>
                 </li>
                 <li>
@@ -170,7 +152,7 @@ export function Footer() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2024 Usman Abdullahi. Built with modern web technologies.</p>
+            <p>© {new Date().getFullYear()} Usman Abdullahi. Built with modern web technologies.</p>
           </div>
         </div>
       </div>

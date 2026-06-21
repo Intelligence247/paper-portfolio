@@ -17,16 +17,21 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">
-            <Button className="bg-[#0B0B0B] text-white hover:bg-black/90 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
-              <Mail className="w-5 h-5" />
-              Get in touch
+            <Button asChild className="bg-[#0B0B0B] text-white hover:bg-black/90 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
+              <a href="mailto:uthmanabdullahi2020@gmail.com">
+                <Mail className="w-5 h-5" />
+                Get in touch
+              </a>
             </Button>
             <Button
+              asChild
               variant="outline"
               className="bg-white border-[3px] border-black hover:bg-gray-50 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]"
             >
-              <FolderOpen className="w-5 h-5" />
-              View portfolio
+              <a href="#portfolio">
+                <FolderOpen className="w-5 h-5" />
+                View portfolio
+              </a>
             </Button>
           </div>
         </div>
@@ -34,7 +39,7 @@ export function HeroSection() {
         <div className="flex justify-center md:justify-end">
           <div className="relative w-full max-w-md aspect-square bg-[#FDB927] border-4 border-black rounded-3xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <img
-              src="/images/profile2.png"
+              src="/images/profile2.webp"
               alt="Usman Abdullahi"
               className="w-full h-full object-cover"
             />
