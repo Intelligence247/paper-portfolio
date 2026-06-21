@@ -51,7 +51,11 @@ export function ExperienceSection() {
               A journey through diverse roles and companies, building scalable applications and leading innovative projects. Each experience has shaped my expertise in full-stack development and technical leadership.
             </p>
             <Button asChild className="bg-white text-black hover:bg-gray-50 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px]">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://drive.google.com/file/d/1zjYF07KbOPXu1GL7msQxmzgOf3e6cg17/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FileText className="w-5 h-5" />
                 See full resume
               </a>
